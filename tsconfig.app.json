@@ -2,7 +2,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "resolveJsonModule": true,
+    "noImplicitAny": true,
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true
   },
   "files": [
     "src/main.ts",
@@ -12,3 +16,4 @@
     "src/**/*.d.ts"
   ]
 }
+

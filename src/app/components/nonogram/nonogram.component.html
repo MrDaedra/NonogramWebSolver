@@ -1,0 +1,34 @@
+<h2>Nonogram: {{nonogramModel?.name}}</h2>
+
+<div class="nonogram-table">
+  <div class="top-block">
+    <div class="placeholder"></div>
+    <div class="hints">
+      <div *ngFor="let row of nonogramViewModel.horizontalHints" class="hint-row">
+        <div *ngFor="let cell of row" class="hint-cell cell">
+          {{cell.value || ''}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-block">
+    <div class="hints">
+      <div *ngFor="let row of nonogramViewModel.verticalHints" class="hint-row">
+        <div *ngFor="let cell of row" class="hint-cell cell">
+          {{cell.value || ''}}
+        </div>
+      </div>
+    </div>
+    <div class="main-area">
+      <div *ngFor="let row of nonogramViewModel.cells" class="puzzle-row">
+        <div *ngFor="let cell of row" class="puzzle-cell cell"
+          [class.empty]="cell.state===CellState.Empty"
+          [class.filled]="cell.state===CellState.Filled"
+          [class.skipped]="cell.state===CellState.Skipped"
+          (mousedown)="updateCell(cell)"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button name="Start solving" (click)="startSolving()">Start solving</button>

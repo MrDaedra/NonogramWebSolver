@@ -1,0 +1,7 @@
+<div>
+  <ul>
+    <li *ngFor="let nonogram of nonongrams" [routerLink]="['/nonogram', nonogram.id]" >
+      {{nonogram.name}}
+    </li>
+  </ul>
+</div>

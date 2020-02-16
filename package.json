@@ -1,5 +1,5 @@
 {
-  "name": "nonogramer",
+  "name": "nonogramWebSolver",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
