@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NonogramViewModel } from 'src/app/models/nonogram-view-model';
+import { Nonogram } from 'src/app/models/nonogram';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,7 @@ import { NonogramViewModel } from 'src/app/models/nonogram-view-model';
 export class NonogramSolverService {
   constructor() { }
 
-  startSolving(viewModel: NonogramViewModel): void {
+  startSolving(viewModel: Nonogram): void {
     throw new Error("Method not implemented.");
   }
 }

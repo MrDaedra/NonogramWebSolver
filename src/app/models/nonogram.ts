@@ -1,6 +1,9 @@
-import { NonogramMetadata } from './nonogram-metadata';
+import { Cell } from './cell';
+import { HintCell } from './hint-cell';
 
-export interface Nonogram extends NonogramMetadata {
-  vertical: string[][];
-  horizontal: string[][];
+export class Nonogram {
+  cells: Cell[][];
+  verticalHints: HintCell[][];
+  horizontalHints: HintCell[][];
+  name: string;
 }

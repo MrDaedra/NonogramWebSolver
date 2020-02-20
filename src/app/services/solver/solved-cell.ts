@@ -1,11 +1,11 @@
-import { CellViewModel } from 'src/app/models/cell-view-model';
+import { Cell } from 'src/app/models/cell';
 
 export class SolvedCell {
-  constructor(originalCell: CellViewModel) {
+  constructor(originalCell: Cell) {
     this.originalCell = originalCell;
   }
 
-  originalCell: CellViewModel;
+  originalCell: Cell;
   straightTurnBlockId: number;
   reverseTurnBlockId: number;
 }

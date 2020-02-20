@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import sample1 from '../data/1.json';
 import sample2 from '../data/2.json';
-import { Nonogram } from '../models/Nonogram.js';
 import { NonogramMetadata } from '../models/nonogram-metadata.js';
+import { NonogramDto } from '../models/nonogram-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +18,12 @@ export class FileService {
      ];
   }
 
-  getNonogramById(id: number): Nonogram {
+  getNonogramById(id: number): NonogramDto {
     switch (id) {
       case 1:
-        return sample1 as Nonogram;
+        return sample1 as NonogramDto;
       case 2:
-        return sample2 as Nonogram;
+        return sample2 as NonogramDto;
       default:
         return null;
     }

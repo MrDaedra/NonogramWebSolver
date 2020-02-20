@@ -5,4 +5,5 @@ export class NonogramViewModel {
   cells: CellViewModel[][];
   verticalHints: HintCellViewModel[][];
   horizontalHints: HintCellViewModel[][];
+  name: string;
 }

@@ -12,17 +12,17 @@ export class CellStateManagerService {
   updateState(cell: CellViewModel): void {
     switch (cell.state) {
       case CellState.Empty:
-        cell.state = CellState.Filled;
+        cell.setState(CellState.Filled);
         break;
       case CellState.Filled:
-        cell.state = CellState.Skipped;
+        cell.setState(CellState.Skipped);
         break;
       case CellState.Skipped:
-        cell.state = CellState.Empty;
+        cell.setState(CellState.Empty);
         break;
 
       default:
-        cell.state = CellState.Empty;
+        cell.setState(CellState.Empty);
         break;
     }
   }
