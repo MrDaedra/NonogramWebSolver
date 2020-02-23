@@ -36,7 +36,7 @@ export class NonogramComponent implements OnInit {
   }
 
   updateCell(cell: CellViewModel): void {
-    this.cellStateManager.updateState(cell);
+    this.cellStateManager.updateState(cell.model);
   }
 
   startSolving(): void {

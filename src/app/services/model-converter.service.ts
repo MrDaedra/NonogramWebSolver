@@ -18,12 +18,12 @@ export class ModelConverterService {
     let horizontalHintLength = this.getDimensionLength(dto.horizontal);
     let verticalHintLength = this.getDimensionLength(dto.vertical)
 
-    return {
+    return Object.assign(new Nonogram(), {
       cells: this.generateCells(dto.horizontal.length, dto.vertical.length),
       verticalHints: this.getHintCells(dto.vertical, verticalHintLength),
       horizontalHints: this.getHintCells(dto.horizontal, horizontalHintLength),
       name: dto.name
-    }
+    });
   }
 
   convertModel(model: Nonogram): NonogramViewModel {

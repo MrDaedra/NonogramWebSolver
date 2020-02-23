@@ -1,5 +1,16 @@
+$borderColor: gray;
+$hintCellBackground: lightgray;
+$hoverColor: rgba($color: black, $alpha: 0.2);
+$filledCellColor: black;
+$boldBorderWidth: 3px;
+$regularBorderWidth: 1px;
+
 .top-block, .bottom-block, .main-area, .puzzle-row, .hints, .hint-row {
   display: flex;
+}
+
+.main-area, .hints {
+  border: solid $boldBorderWidth $borderColor;
 }
 
 .top-block {
@@ -8,22 +19,78 @@
     flex-grow: 1;
   }
 
-  .hints .hint-row {
-    flex-direction: column;
+  .hints {
+    border-bottom-width: 0;
+
+    .hint-row {
+      flex-direction: column;
+
+      &:nth-child(5n) {
+
+        .cell {
+          border-right-width: $boldBorderWidth;
+        }
+      }
+    }
   }
+
 }
 
 .bottom-block  {
 
   .main-area {
     flex-direction: column;
+
+    .puzzle-row {
+
+      &:nth-child(5n) {
+
+        .puzzle-cell {
+          border-bottom-width: $boldBorderWidth;
+        }
+      }
+
+      .puzzle-cell {
+
+        &:nth-child(5n) {
+          border-right-width: $boldBorderWidth;
+        }
+
+        &.filled {
+          background: $filledCellColor;
+        }
+
+        &.empty {
+          &:hover {
+            background: $hoverColor;
+          }
+        }
+
+        &.skipped {
+          position: relative;
+
+          &::before {
+            content: "•";
+            line-height: 1.25;
+          }
+        }
+      }
+    }
   }
 
   .hints {
     flex-direction: column;
+    border-right-width: 0;
 
     .hint-row {
       flex-direction: row;
+
+      &:nth-child(5n) {
+
+        .hint-cell {
+          border-bottom-width: $boldBorderWidth;
+        }
+      }
     }
   }
 }
@@ -31,33 +98,11 @@
 .cell {
   width: 1.2em;
   height: 1.2em;
-  border: 1px solid gray;
+  border: solid $regularBorderWidth $borderColor;
   text-align: center;
 
   &.hint-cell {
-    background: lightgray;
-  }
-
-  &.puzzle-cell {
-
-    &.filled {
-      background: black;
-    }
-
-    &.empty {
-      &:hover {
-        background: rgba($color: black, $alpha: 0.2);
-      }
-    }
-
-    &.skipped {
-      position: relative;
-
-      &::before {
-        content: "•";
-        line-height: 1.25;
-      }
-    }
+    background: $hintCellBackground;
   }
 }
 
